@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bill Splitter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f4f7;
+      display: flex;
+      justify-content: center;
+      padding: 30px 12px;
+    }
+    .box {
+      background: #ffffff;
+      width: 100%;
+      max-width: 380px;
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid #d0d5dd;
+    }
+    h1 { font-size: 22px; margin-top: 0; }
+    label { display: block; margin-top: 14px; font-weight: bold; }
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+    .error { color: #b42318; font-size: 13px; min-height: 16px; margin: 3px 0 0; }
+    .check { margin-top: 14px; }
+    .check label { display: inline; font-weight: normal; }
+    button {
+      width: 100%;
+      margin-top: 16px;
+      padding: 10px;
+      font-size: 16px;
+      background: #175cd3;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #result { margin-top: 18px; line-height: 1.7; }
+    #suggestion { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Bill Splitter</h1>
+
+    <label for="bill">Bill amount</label>
+    <input type="number" id="bill" placeholder="e.g. 1200">
+    <p class="error" id="billError"></p>
+
+    <label for="tip">Tip percentage (%)</label>
+    <input type="number" id="tip" placeholder="e.g. 10">
+    <p class="error" id="tipError"></p>
+
+    <label for="people">Number of people</label>
+    <input type="number" id="people" placeholder="e.g. 4">
+    <p class="error" id="peopleError"></p>
+
+    <div class="check">
+      <input type="checkbox" id="roundUp">
+      <label for="roundUp">Round up the amount per person</label>
+    </div>
+
+    <button onclick="splitBill()">Calculate</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
